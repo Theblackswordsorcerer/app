@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Health Tips</h2>
+<div class="health-tips">
+    {% for tip in health_tips %}
+    <div class="tip">
+        <h3>{{ tip.title }}</h3>
+        <p>{{ tip.content }}</p>
+        <span class="category">Category: {{ tip.category }}</span>
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+    .health-tips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .tip {
+        background: #fff;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        width: calc(50% - 10px);
+    }
+    .tip h3 {
+        margin-top: 0;
+        color: #50b3a2;
+    }
+    .category {
+        display: inline-block;
+        background: #e8491d;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-size: 0.8em;
+    }
+</style>
+{% endblock %}
